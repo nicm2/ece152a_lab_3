@@ -25,8 +25,8 @@ module shift_register #(
     case (funct_i)
       NA: out_d = out_q;
       RIGHT: out_d = {serial_i, out_q[WIDTH-1:1]};
-      LEFT: out_d = {out_q[WIDTH-2:0]}, serial_i;
-      LOAD: out_d = {word_i}
+      LEFT: out_d = {out_q[WIDTH-2:0], serial_i};
+      LOAD: out_d = {word_i};
     endcase
   end
   
